@@ -11,6 +11,8 @@ const PORT = 8000;
 const servicesCardRoute = require('./routes/servicesCard');
 const about = require('./routes/about');
 const aboutTeam = require('./routes/aboutTeam');
+const topServicesRoute = require('./routes/topServices');
+const virtualService = require('./routes/whyChooseVirtualExports');
 
 mongoose
   .connect(process.env.MONGODB_URL, {
@@ -24,6 +26,8 @@ mongoose
 app.use('/servicesCard', servicesCardRoute);
 app.use('/about', about);
 app.use('/aboutTeam', aboutTeam);
+app.use('/topServices', topServicesRoute);
+app.use('/virtualService', virtualService);
 
 app.get('/', (req, res) => {
   res.send('Hello Buddy!!!');
