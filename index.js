@@ -9,6 +9,7 @@ app.use(cors());
 const PORT = 8000;
 
 const servicesCardRoute = require("./routes/servicesCard");
+const topServicesRoute = require("./routes/topServices");
 
 mongoose
   .connect(process.env.MONGODB_URL, {
@@ -20,6 +21,7 @@ mongoose
   .catch((err) => console.log(err));
 
 app.use("/servicesCard", servicesCardRoute);
+app.use("/topServices", topServicesRoute);
 
 app.get("/", (req, res) => {
   res.send("Hello Buddy!!!");
