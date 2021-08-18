@@ -1,10 +1,10 @@
 const router = require("express").Router();
-const TopServices = require("../models/TopServices");
+const VirtualService = require("../models/WhyChooseVirtualExports");
 
 router.get("/", async (req, res) => {
   try {
-    const topServices = await TopServices.find({});
-    res.status(200).json(topServices);
+    const virtualService = await VirtualService.find({});
+    res.status(200).json(virtualService);
   } catch (err) {
     res.status(404).json(err);
   }
@@ -12,8 +12,8 @@ router.get("/", async (req, res) => {
 
 router.post("/post", async (req, res) => {
   try {
-    const topServices = new TopServices(req.body);
-    const data = await topServices.save();
+    const virtualService = new VirtualService(req.body);
+    const data = await virtualService.save();
     res.status(200).json(data);
   } catch (err) {
     res.status(404).json(err);
@@ -23,7 +23,7 @@ router.post("/post", async (req, res) => {
 router.put("/update", async (req, res) => {
   try {
     const id = req.body._id;
-    await TopServices.findByIdAndUpdate({_id:id}, {
+    await VirtualService.findByIdAndUpdate({_id:id}, {
       $set: {
        img:req.body.img,
        title:req.body.title,
