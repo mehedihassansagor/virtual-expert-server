@@ -16,6 +16,7 @@ const aboutTeam = require('./routes/aboutTeam');
 const topServicesRoute = require('./routes/topServices');
 const virtualService = require('./routes/whyChooseVirtualExports');
 const placeAnOrder = require('./routes/placeAnOrder');
+const placeAnOrderList = require('./routes/placeAnOrderList');
 
 mongoose
   .connect(process.env.MONGODB_URL, {
@@ -32,6 +33,7 @@ app.use('/aboutUnique', aboutUnique);
 app.use('/aboutUniqueList', aboutUniqueList);
 app.use('/aboutTeam', aboutTeam);
 app.use('/placeAnOrder', placeAnOrder);
+app.use('/placeAnOrderList', placeAnOrderList);
 app.use('/topServices', topServicesRoute);
 app.use('/virtualService', virtualService);
 
