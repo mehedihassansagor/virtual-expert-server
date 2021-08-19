@@ -2,9 +2,11 @@ const express = require('express');
 const cors = require('cors');
 const app = express();
 const mongoose = require('mongoose');
+const fileUpload = require('express-fileupload');
 require('dotenv').config();
 app.use(express.json());
 app.use(cors());
+app.use(fileUpload());
 
 const PORT = 8000;
 

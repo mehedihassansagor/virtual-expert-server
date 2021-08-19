@@ -12,6 +12,15 @@ router.get("/", async (req, res) => {
 
 router.post("/post", async (req, res) => {
   try {
+    const file = req.files.file;
+    const newImg = file.data;
+    const encImg = newImg.toString("base64");
+    let coverImage = {
+      contentType: file.mimetype,
+      size: file.size,
+      img: Buffer.from(encImg, "base64"),
+    };
+    req.body.img = coverImage;
     const servicesCard = new ServicesCard(req.body);
     const data = await servicesCard.save();
     res.status(200).json(data);
