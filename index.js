@@ -21,6 +21,8 @@ const virtualService = require('./routes/whyChooseVirtualExports');
 const placeAnOrder = require('./routes/placeAnOrder');
 const placeAnOrderList = require('./routes/placeAnOrderList');
 const whatWeDo = require('./routes/whatWeDo');
+const footer = require('./routes/footer');
+const footerLink = require('./routes/footerLink');
 
 mongoose
   .connect(process.env.MONGODB_URL, {
@@ -44,6 +46,8 @@ app.use('/placeAnOrder', placeAnOrder);
 app.use('/placeAnOrderList', placeAnOrderList);
 app.use('/topServices', topServicesRoute);
 app.use('/whatWeDo', whatWeDo);
+app.use('/footer', footer);
+app.use('/footerLink', footerLink);
 
 app.get('/', (req, res) => {
   res.send('Hello Buddy!!!');
