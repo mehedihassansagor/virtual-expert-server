@@ -16,6 +16,7 @@ const aboutTeam = require('./routes/aboutTeam');
 const topServicesRoute = require('./routes/topServices');
 const virtualService = require('./routes/whyChooseVirtualExports');
 const placeAnOrder = require('./routes/placeAnOrder');
+const whatWeDo = require('./routes/whatWeDo');
 
 mongoose
   .connect(process.env.MONGODB_URL, {
@@ -34,6 +35,7 @@ app.use('/aboutTeam', aboutTeam);
 app.use('/placeAnOrder', placeAnOrder);
 app.use('/topServices', topServicesRoute);
 app.use('/virtualService', virtualService);
+app.use('/whatWeDo', whatWeDo);
 
 app.get('/', (req, res) => {
   res.send('Hello Buddy!!!');
