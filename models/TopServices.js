@@ -3,7 +3,7 @@ const mongoose = require("mongoose");
 const TopServicesSchema = new mongoose.Schema(
   {
     img: {
-      type: String,
+      type: Object,
       required: true,
     },
     title: {
@@ -14,7 +14,6 @@ const TopServicesSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
-   
   },
   { timeStamps: true }
 );
