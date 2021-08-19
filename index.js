@@ -1,16 +1,28 @@
-const express = require("express");
-const cors = require("cors");
+const express = require('express');
+const cors = require('cors');
 const app = express();
-const mongoose = require("mongoose");
-require("dotenv").config();
+const mongoose = require('mongoose');
+const fileUpload = require('express-fileupload');
+require('dotenv').config();
 app.use(express.json());
 app.use(cors());
+app.use(fileUpload());
 
 const PORT = 8000;
 
-const servicesCardRoute = require("./routes/servicesCard");
-const topServicesRoute = require("./routes/topServices");
-const virtualService = require("./routes/whyChooseVirtualExports");
+const servicesCardRoute = require('./routes/servicesCard');
+const headerInfoTopServices = require('./routes/headerInfoTopService');
+const headerInfoVirtualExports = require('./routes/headerInfoVirtualExports');
+const banner = require('./routes/banner');
+const about = require('./routes/about');
+const aboutUnique = require('./routes/aboutUnique');
+const aboutUniqueList = require('./routes/aboutUniqueList');
+const aboutTeam = require('./routes/aboutTeam');
+const topServicesRoute = require('./routes/topServices');
+const virtualService = require('./routes/whyChooseVirtualExports');
+const placeAnOrder = require('./routes/placeAnOrder');
+const placeAnOrderList = require('./routes/placeAnOrderList');
+const whatWeDo = require('./routes/whatWeDo');
 
 mongoose
   .connect(process.env.MONGODB_URL, {
@@ -18,15 +30,25 @@ mongoose
     useUnifiedTopology: true,
     useCreateIndex: true,
   })
-  .then(console.log("Connecting to mongoDB"))
+  .then(console.log('Connecting to mongoDB'))
   .catch((err) => console.log(err));
 
-app.use("/servicesCard", servicesCardRoute);
-app.use("/topServices", topServicesRoute);
-app.use("/virtualService",virtualService);
+app.use('/headerInfoTopServices', headerInfoTopServices);
+app.use('/headerInfoVirtualExports', headerInfoVirtualExports);
+app.use('/virtualService', virtualService);
+app.use('/banner', banner);
+app.use('/servicesCard', servicesCardRoute);
+app.use('/about', about);
+app.use('/aboutUnique', aboutUnique);
+app.use('/aboutUniqueList', aboutUniqueList);
+app.use('/aboutTeam', aboutTeam);
+app.use('/placeAnOrder', placeAnOrder);
+app.use('/placeAnOrderList', placeAnOrderList);
+app.use('/topServices', topServicesRoute);
+app.use('/whatWeDo', whatWeDo);
 
-app.get("/", (req, res) => {
-  res.send("Hello Buddy!!!!");
+app.get('/', (req, res) => {
+  res.send('Hello Buddy!!!');
 });
 
 app.listen(process.env.PORT || PORT);

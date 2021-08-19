@@ -3,7 +3,7 @@ const mongoose = require("mongoose");
 const ServicesCardSchema = new mongoose.Schema(
   {
     img: {
-      type: String,
+      type: Object,
       required: true,
     },
     title: {
@@ -16,31 +16,31 @@ const ServicesCardSchema = new mongoose.Schema(
     },
     regularReview: {
       type: String,
-      default: '',
+      default: "",
     },
     videoReview: {
       type: String,
-      default: '',
+      default: "",
     },
     top50Reviewers: {
       type: String,
-      default: '',
+      default: "",
     },
     delivery: {
       type: String,
-      default: '',
+      default: "",
     },
     warranty: {
       type: String,
-      default: '',
+      default: "",
     },
     price: {
       type: String,
-      default: '',
+      default: "",
     },
     maintenance: {
       type: String,
-      default: '',
+      default: "",
     },
   },
   { timeStamps: true }
