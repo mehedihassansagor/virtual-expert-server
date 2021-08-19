@@ -1,10 +1,10 @@
 const router = require('express').Router();
-const AboutTeam = require('../models/AboutTeam');
+const AboutUnique = require('../models/AboutUnique');
 
 router.get('/', async (req, res) => {
   try {
-    const aboutTeam = await AboutTeam.find({});
-    res.status(200).json(aboutTeam);
+    const aboutUnique = await AboutUnique.find({});
+    res.status(200).json(aboutUnique);
   } catch (err) {
     res.status(404).json(err);
   }
@@ -12,8 +12,8 @@ router.get('/', async (req, res) => {
 
 router.post('/post', async (req, res) => {
   try {
-    const aboutTeam = new AboutTeam(req.body);
-    const data = await aboutTeam.save();
+    const aboutUnique = new AboutUnique(req.body);
+    const data = await aboutUnique.save();
     res.status(200).json(data);
   } catch (err) {
     res.status(404).json(err);
@@ -23,19 +23,18 @@ router.post('/post', async (req, res) => {
 router.put('/update', async (req, res) => {
   try {
     const id = req.body._id;
-    await AboutTeam.findByIdAndUpdate(
+    await AboutUnique.findByIdAndUpdate(
       { _id: id },
       {
         $set: {
           title: req.body.title,
-          discription: req.body.discription,
         },
       },
       {
         useFindAndModify: false,
       }
     );
-    res.status(200).json('updated');
+    res.status(200).json('update');
   } catch (err) {
     res.status(404).json(err);
   }
