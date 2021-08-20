@@ -14,6 +14,7 @@ const servicesCardRoute = require('./routes/servicesCard');
 const headerInfoTopServices = require('./routes/headerInfoTopService');
 const headerInfoVirtualExports = require('./routes/headerInfoVirtualExports');
 const banner = require('./routes/banner');
+const amazon = require('./routes/amazon');
 const about = require('./routes/about');
 const aboutUnique = require('./routes/aboutUnique');
 const aboutUniqueList = require('./routes/aboutUniqueList');
@@ -25,6 +26,7 @@ const placeAnOrderList = require('./routes/placeAnOrderList');
 const whatWeDo = require('./routes/whatWeDo');
 const footer = require('./routes/footer');
 const footerLink = require('./routes/footerLink');
+const serviceCardHeader = require('./routes/serviceCardHeader');
 
 mongoose
   .connect(process.env.MONGODB_URL, {
@@ -39,6 +41,7 @@ app.use('/headerInfoTopServices', headerInfoTopServices);
 app.use('/headerInfoVirtualExports', headerInfoVirtualExports);
 app.use('/virtualService', virtualService);
 app.use('/banner', banner);
+app.use('/amazon', amazon);
 app.use('/servicesCard', servicesCardRoute);
 app.use('/about', about);
 app.use('/aboutUnique', aboutUnique);
@@ -50,6 +53,7 @@ app.use('/topServices', topServicesRoute);
 app.use('/whatWeDo', whatWeDo);
 app.use('/footer', footer);
 app.use('/footerLink', footerLink);
+app.use('/serviceCardHeader', serviceCardHeader);
 
 app.get('/', (req, res) => {
   res.send('Hello Buddy!!!');
