@@ -1,7 +1,7 @@
-const router = require('express').Router();
-const FooterLink = require('../models/FooterLink');
+const router = require("express").Router();
+const FooterLink = require("../models/FooterLink");
 
-router.get('/', async (req, res) => {
+router.get("/", async (req, res) => {
   try {
     const footerLink = await FooterLink.find({});
     res.status(200).json(footerLink);
@@ -10,7 +10,7 @@ router.get('/', async (req, res) => {
   }
 });
 
-router.post('/post', async (req, res) => {
+router.post("/post", async (req, res) => {
   try {
     const footerLink = new FooterLink(req.body);
     const data = await footerLink.save();
@@ -20,7 +20,7 @@ router.post('/post', async (req, res) => {
   }
 });
 
-router.put('/update', async (req, res) => {
+router.put("/update", async (req, res) => {
   try {
     const id = req.body._id;
     await FooterLink.findByIdAndUpdate(
@@ -28,17 +28,17 @@ router.put('/update', async (req, res) => {
       {
         $set: {
           facebook: req.body.facebook,
-          twiter: req.body.twiter,
-          instgram: req.body.instgram,
+          twitter: req.body.twitter,
+          instagram: req.body.instagram,
           skype: req.body.skype,
-          whatsapp: req.body.whatsapp,
+          telegram: req.body.telegram,
         },
       },
       {
         useFindAndModify: false,
       }
     );
-    res.status(200).json('updated');
+    res.status(200).json("updated");
   } catch (err) {
     res.status(404).json(err);
   }
