@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const HeaderInfoTopServices= require("../models/HeaderInfoTopService");
+const HeaderInfoTopServices = require("../models/HeaderInfoTopService");
 
 router.get("/", async (req, res) => {
   try {
@@ -20,21 +20,24 @@ router.post("/post", async (req, res) => {
   }
 });
 
-// router.put("/update", async (req, res) => {
-//   try {
-//     const id = req.body._id;
-//     await Banner.findByIdAndUpdate({_id:id}, {
-//       $set: {
-//        title:req.body.title,
-//        description:req.body.description, 
-//       },
-//     },{
-//       useFindAndModify: false,
-//     },)
-//     res.status(200).json("mawmaw")
-//   } catch (err) {
-//     res.status(404).json(err);
-//   }
-// });
+router.put("/update", async (req, res) => {
+  try {
+    const id = req.body._id;
+    await HeaderInfoTopServices.findByIdAndUpdate(
+      { _id: id },
+      {
+        $set: {
+          title: req.body.title,
+        },
+      },
+      {
+        useFindAndModify: false,
+      }
+    );
+    res.status(200).json("mawmaw");
+  } catch (err) {
+    res.status(404).json(err);
+  }
+});
 
 module.exports = router;
