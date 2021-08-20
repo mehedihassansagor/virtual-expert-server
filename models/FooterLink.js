@@ -1,4 +1,4 @@
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
 
 const FooterSchema = new mongoose.Schema(
   {
@@ -6,11 +6,11 @@ const FooterSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
-    twiter: {
+    twitter: {
       type: String,
       required: true,
     },
-    instgram: {
+    instagram: {
       type: String,
       required: true,
     },
@@ -18,7 +18,7 @@ const FooterSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
-    whatsapp: {
+    telegram: {
       type: String,
       required: true,
     },
@@ -26,4 +26,4 @@ const FooterSchema = new mongoose.Schema(
   { timeStamps: true }
 );
 
-module.exports = mongoose.model('footerLink', FooterSchema);
+module.exports = mongoose.model("footerLink", FooterSchema);
