@@ -14,10 +14,6 @@ const FooterSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
-    skype: {
-      type: String,
-      required: true,
-    },
     telegram: {
       type: String,
       required: true,
