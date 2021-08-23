@@ -30,6 +30,7 @@ const testimonials = require("./routes/testimonials");
 const serviceCardHeader = require("./routes/serviceCardHeader");
 const scheduleMeeting = require("./routes/scheduleMeeting");
 const teams = require("./routes/team");
+const adminLogin = require("./routes/adminLogin");
 
 mongoose
   .connect(process.env.MONGODB_URL, {
@@ -60,6 +61,7 @@ app.use("/testimonials", testimonials);
 app.use("/serviceCardHeader", serviceCardHeader);
 app.use("/scheduleMeeting", scheduleMeeting);
 app.use("/teams", teams);
+app.use("/adminLogin", adminLogin);
 
 app.get("/", (req, res) => {
   res.send("Hello Buddy!!!");
