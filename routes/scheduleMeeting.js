@@ -30,6 +30,7 @@ router.put("/update", async (req, res) => {
       {
         $set: {
           title: req.body.title,
+          link: req.body.link,
         },
       },
       { useFindAndModify: false }
