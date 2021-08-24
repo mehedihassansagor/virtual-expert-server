@@ -1,25 +1,25 @@
 const mongoose = require("mongoose");
 
-const FooterSchema = new mongoose.Schema(
+const TestimonialSchema = new mongoose.Schema(
   {
-    facebook: {
+    img: {
+      type: Object,
+      required: true,
+    },
+    name: {
       type: String,
       required: true,
     },
-    twitter: {
+    jobTitle: {
       type: String,
       required: true,
     },
-    instagram: {
-      type: String,
-      required: true,
-    },
-    telegram: {
+    review: {
       type: String,
       required: true,
     },
   },
-  { timeStamps: true }
+  { timestamps: true }
 );
 
-module.exports = mongoose.model("footerLink", FooterSchema);
+module.exports = mongoose.model("Testimonial", TestimonialSchema);

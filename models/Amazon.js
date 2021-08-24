@@ -1,25 +1,25 @@
 const mongoose = require("mongoose");
 
-const FooterSchema = new mongoose.Schema(
+const AmazonSchema = new mongoose.Schema(
   {
-    facebook: {
+    title: {
       type: String,
       required: true,
     },
-    twitter: {
+    description_part_1: {
       type: String,
       required: true,
     },
-    instagram: {
+    description_part_2: {
       type: String,
       required: true,
     },
-    telegram: {
+    description_part_3: {
       type: String,
-      required: true,
+      default: "",
     },
   },
   { timeStamps: true }
 );
 
-module.exports = mongoose.model("footerLink", FooterSchema);
+module.exports = mongoose.model("Amazon", AmazonSchema);
