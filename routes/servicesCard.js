@@ -60,6 +60,8 @@ router.put("/update", async (req, res) => {
             warranty: req.body.warranty,
             price: req.body.price,
             maintenance: req.body.maintenance,
+            imgTitle: req.body.imgTitle,
+            imgAlt: req.body.imgAlt,
             img: req.body.img,
           },
         },
@@ -79,7 +81,7 @@ router.put("/update", async (req, res) => {
       };
       req.body.img = coverImage;
       const servicesCard = await ServicesCard.findByIdAndUpdate(
-        { _id: req.body._id  },
+        { _id: req.body._id },
         {
           $set: {
             title: req.body.title,
@@ -91,6 +93,8 @@ router.put("/update", async (req, res) => {
             warranty: req.body.warranty,
             price: req.body.price,
             maintenance: req.body.maintenance,
+            imgTitle: req.body.imgTitle,
+            imgAlt: req.body.imgAlt,
             img: req.body.img,
           },
         },

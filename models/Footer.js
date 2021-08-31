@@ -10,7 +10,15 @@ const FooterSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
+    skypeTitle: {
+      type: String,
+      required: true,
+    },
     skype: {
+      type: String,
+      required: true,
+    },
+    whatsAppTitle: {
       type: String,
       required: true,
     },
@@ -19,6 +27,10 @@ const FooterSchema = new mongoose.Schema(
       required: true,
     },
     copyRightText: {
+      type: String,
+      required: true,
+    },
+    address: {
       type: String,
       required: true,
     },

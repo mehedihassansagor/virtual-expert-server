@@ -32,6 +32,7 @@ router.put("/update", async (req, res) => {
           instagram: req.body.instagram,
           skype: req.body.skype,
           telegram: req.body.telegram,
+          youTube: req.body.youTube,
         },
       },
       {

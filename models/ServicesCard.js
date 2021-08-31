@@ -42,6 +42,14 @@ const ServicesCardSchema = new mongoose.Schema(
       type: String,
       default: "",
     },
+    imgTitle: {
+      type: String,
+      required: true,
+    },
+    imgAlt: {
+      type: String,
+      required: true,
+    },
   },
   { timeStamps: true }
 );

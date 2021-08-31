@@ -18,6 +18,10 @@ const FooterSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
+    youTube: {
+      type: String,
+      required: true,
+    },
   },
   { timeStamps: true }
 );

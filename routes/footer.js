@@ -29,9 +29,12 @@ router.put("/update", async (req, res) => {
         $set: {
           description: req.body.description,
           email: req.body.email,
+          skypeTitle: req.body.skypeTitle,
           skype: req.body.skype,
+          whatsAppTitle: req.body.whatsAppTitle,
           whatsApp: req.body.whatsApp,
           copyRightText: req.body.copyRightText,
+          address: req.body.address,
         },
       },
       {
