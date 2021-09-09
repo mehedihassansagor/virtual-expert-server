@@ -10,6 +10,10 @@ const AdminLoginSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
+    verificationCode: {
+      type: String,
+      default: "",
+    },
   },
   { timeStamps: true }
 );

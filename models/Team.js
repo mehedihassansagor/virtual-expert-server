@@ -14,6 +14,14 @@ const TeamSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
+    imgURL: {
+      type: String,
+      default: "",
+    },
+    alt: {
+      type: String,
+      default: "",
+    },
   },
   { timestamps: true }
 );

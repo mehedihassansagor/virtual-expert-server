@@ -50,6 +50,10 @@ const ServicesCardSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
+    imgURL: {
+      type: String,
+      default: "",
+    },
   },
   { timeStamps: true }
 );

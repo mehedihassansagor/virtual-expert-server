@@ -14,6 +14,14 @@ const TopServicesSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
+    imgURL: {
+      type: String,
+      default: "",
+    },
+    alt: {
+      type: String,
+      default: "",
+    },
   },
   { timeStamps: true }
 );
